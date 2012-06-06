@@ -46,7 +46,7 @@ unsigned long NextEvenNumber(unsigned long uNum)
 int HowMuchBitsUsing(unsigned long uNum)
 {
 	int count = 1;
-	while(uNum != 1)
+	while(uNum > 1)
 	{
 		uNum >>= 1;
 		++count;
@@ -60,7 +60,7 @@ void DecToBin(unsigned long uNum)
 	int count = HowMuchBitsUsing(uNum);
 	int bits = count;
 	int * ptemp = new int[count];
-	while(uNum != 1)
+	while(uNum > 1)
 	{
 		--count;
 		ptemp[count] = (uNum % 2) ;
