@@ -14,7 +14,7 @@ using namespace std;
 unsigned long NextEvenNumber(unsigned long uNum);
 
 /**
-*@brief		This function return how much bits number using
+*@brief		This function return how much bits of number are using
 */
 int HowMuchBitsUsing(unsigned long uNum);
 
