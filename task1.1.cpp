@@ -1,6 +1,6 @@
 /**
-* This programe returns the next even number 
-* for a given unsigned long integer.
+* Using only bit operation, write a function that returns 
+* the next even number for a given unsigned long integer.
 */
 
 #include "stdafx.h"
@@ -40,7 +40,7 @@ int _tmain(int argc, _TCHAR* argv[])
 
 unsigned long NextEvenNumber(unsigned long uNum)
 {
-	return ( (uNum & ( (ULONG_MAX >> 1) << 1) ) + 2);
+	return ( (uNum & (ULONG_MAX & ~0x1) ) + 2);
 }
 
 int HowMuchBitsUsing(unsigned long uNum)
