@@ -54,7 +54,7 @@ unsigned long BitsEqual(unsigned long uNum, unsigned short bit1, unsigned short 
 int HowMuchBitsUsing(unsigned long uNum)
 {
 	int count = 1;
-	while(uNum != 1)
+	while(uNum > 1)
 	{
 		uNum >>= 1;
 		++count;
@@ -68,7 +68,7 @@ void DecToBin(unsigned long uNum)
 	int count = HowMuchBitsUsing(uNum);
 	int bits = count;
 	int * ptemp = new int[count];
-	while(uNum != 1)
+	while(uNum > 1)
 	{
 		--count;
 		ptemp[count] = (uNum % 2) ;
