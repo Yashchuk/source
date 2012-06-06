@@ -1,6 +1,6 @@
 /**
-* This program return 1, if two bits that are selected by different and 0 if equal.
-* The user also enters a number in which the selected bits.
+* Using only bit operation, write a function that returns 1, 
+* if two bits that are selected by different and 0 if equal.
 */
 
 #include "stdafx.h"
@@ -23,8 +23,6 @@ int HowMuchBitsUsing(unsigned long uNum);
 */
 void DecToBin(unsigned long uNum);
 
-const int SHIFTING_BITS = sizeof(unsigned long) * 8 - 1;
-
 int _tmain(int argc, _TCHAR* argv[])
 {
 	unsigned long uNumber;
@@ -46,9 +44,9 @@ int _tmain(int argc, _TCHAR* argv[])
 
 unsigned long BitsEqual(unsigned long uNum, unsigned short bit1, unsigned short bit2)
 {
-	bit1 = ( ( (uNum >> bit1) << SHIFTING_BITS ) >> SHIFTING_BITS );
+	bit1 = (uNum >> bit1) & 0x1;
 	cout << "First entered bit = " << bit1 << endl;
-	bit2 = ( ( (uNum >> bit2) << SHIFTING_BITS ) >> SHIFTING_BITS );
+	bit2 = (uNum >> bit2) & 0x1;
 	cout << "Second entered bit = " << bit2 << endl;
 	return bit1 ^ bit2;
 }
