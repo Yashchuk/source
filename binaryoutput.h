@@ -22,7 +22,7 @@ int HowMuchBitsUsing(unsigned long int uNum)
 }
 
 /**
-*@brief		This function converts a number from decimal to binary number system and show its
+*@brief		This function converts a number from decimal to binary number system and show it
 */
 
 void DecToBin(unsigned long int uNum)
