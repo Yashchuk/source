@@ -6,20 +6,22 @@
 #include "stdafx.h"
 
 /**
-* This file has a function that converts decimal to binary and show it
+* This file have a function that converts decimal to binary and show it
 * (include <iostream>, using std::cout, using std::endl).
 */
 #include "binaryoutput.h"
 
+typedef unsigned long int ULI;
+
 /**
 *@brief		This function return next even number
 */
-unsigned long NextEvenNumber(unsigned long int uNum);
+ULI NextEvenNumber(ULI uNum);
 
 int _tmain(int argc, _TCHAR* argv[])
 {
 	using std::cin;
-	unsigned long int uNumber;
+	ULI uNumber;
 	cout << "Enter number: ";
 	cin >> uNumber;
 	cout << "You entered: ";
@@ -28,11 +30,10 @@ int _tmain(int argc, _TCHAR* argv[])
 	cout << "Next even number: " 
 		<< uNumber << " (dec) ";
 	DecToBin(uNumber);
-	system("@pause");
 	return 0;
 }
 
-unsigned long NextEvenNumber(unsigned long int uNum)
+ULI NextEvenNumber(ULI uNum)
 {
-	return ( (uNum & (ULONG_MAX & ~0x1) ) + 2);
+	return ( (uNum & (ULONG_MAX & (ULI) (~0x1)) ) + 2);
 }
