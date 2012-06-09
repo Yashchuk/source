@@ -11,18 +11,21 @@
 */
 #include "binaryoutput.h"
 
+typedef unsigned long int ULI;
+typedef unsigned short US;
+
 /**
 *@brief		This function does cyclic shift to the right
 */
-void CyclicShift(unsigned long int & uNumber, unsigned short & HMB);
+void CyclicShift(ULI & uNumber, US HMB);
 
-const int BITS_IN_U_LONG_INT = sizeof(unsigned long int) * 8;
+const short BITS_IN_U_LONG_INT = sizeof(unsigned long int) * 8;
 
 int _tmain(int argc, _TCHAR* argv[])
 {
 	using std::cin;
-	unsigned long int uNumber;
-	unsigned short HowManyBits;
+	ULI uNumber;
+	US HowManyBits;
 	cout << "Enter number: ";
 	cin >> uNumber;
 	cout << "You entered: ";
@@ -36,9 +39,9 @@ int _tmain(int argc, _TCHAR* argv[])
 	return 0;
 }
 
-void CyclicShift(unsigned long int & uNumber, unsigned short & HMB)
+void CyclicShift(ULI & uNumber, US HMB)
 {
-	unsigned long int utemp = (uNumber << (BITS_IN_U_LONG_INT - HMB));
+	ULI utemp = (uNumber << (US) (BITS_IN_U_LONG_INT - HMB));
 	uNumber >>= HMB;
 	uNumber |= utemp;
 }
