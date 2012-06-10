@@ -13,7 +13,7 @@ typedef long int LI;
 /*
 *@ brief	This function return "0" if number is negative or your number in other case
 */
-LI MaxValue (const LI & number);
+LI MaxValue (const LI number);
 
 const short MAX_BITS = sizeof(LI) * 8 - 1;
 
@@ -31,7 +31,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	return 0;
 }
 
-LI MaxValue (const LI & number)
+LI MaxValue (const LI number)
 {
 	LI sign = number & (0x1 << MAX_BITS); /*the sign of number*/
 	sign |= sign >> MAX_BITS;
