@@ -23,7 +23,6 @@ struct Schoolchild
 {
 	char lName[MAX_LEN_NAME], fName[MAX_LEN_NAME], city[MAX_LEN_CITY];
 	unsigned int numSchool : 11, numClass : 4;
-	bool operator<(const Schoolchild & sc);
 };
 
 /*
