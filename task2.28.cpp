@@ -15,6 +15,10 @@ const unsigned short MAX_LEN_NAME = 24;
 
 const unsigned short MAX_LEN_CITY = 10;
 
+const unsigned short MAX_CLASS = 12;
+
+const unsigned short MAX_SCHOOL = 1500;
+
 /*
 * This structure describes the school child: <Last Name>, <First Name>, <City>, <School>, <class>
 */
@@ -31,7 +35,7 @@ struct Schoolchild
 * @return	void
 */
 
-void Input(Schoolchild & sc);
+void Insert(Schoolchild & sc);
 
 /*
 * @brief	This function displays the field structure 
@@ -81,7 +85,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	int HMC = 0;				/*How much contest participants*/
 	cout << "How much contest participants: ";
 	cin >> HMC;
-	/*checking for input*/
+	/*checking for Insert*/
 	while(!cin)
 	{
 		cin.clear();
@@ -89,13 +93,15 @@ int _tmain(int argc, _TCHAR* argv[])
 		cin >> HMC;
 	}
 	while(cin.get() != '\n')
-		;
+	{
+			//NULL
+	}
 	Schoolchild * pS = new Schoolchild[HMC];
 	int i;						/*counter for cycle "for"*/
 	/*filling an array of structures*/
 	for(i = 0; i < HMC; ++i)
 	{
-		Input(sc);
+		Insert(sc);
 		pS[i] = sc;
 		cout << "Next:\n";
 	}
@@ -103,7 +109,9 @@ int _tmain(int argc, _TCHAR* argv[])
 	Sort(pS, HMC);
 	Table();
 	for(i = 0; i < HMC; ++i)
+	{
 		Show(pS[i]);
+	}
 	cout << " ============================================================================= " << endl;
 	SortCity(pS, HMC);
 	cout << "The most active city: " << HMCity(pS, HMC) << endl;
@@ -111,7 +119,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	return 0;
 }
 
-void Input(Schoolchild & sc)
+void Insert(Schoolchild & sc)
 {
 	int iTmp = 0;
 	cout << "Enter last name: ";
@@ -120,8 +128,8 @@ void Input(Schoolchild & sc)
 	cin >> sc.fName;
 	cout << "Enter city: ";
 	cin >> sc.city;
-	/*checking for input*/
-	while( !((iTmp > 0) && (iTmp < 1500)) )
+	/*checking for Insert*/
+	while( !((iTmp > 0) && (iTmp < MAX_SCHOOL)) )
 	{
 		if(!cin)
 		{
@@ -133,8 +141,8 @@ void Input(Schoolchild & sc)
 	}
 	sc.numSchool = iTmp;
 	iTmp = 0;
-	/*checking for input*/
-	while( !((iTmp > 0) && (iTmp <= 12)) )
+	/*checking for Insert*/
+	while( !((iTmp > 0) && (iTmp <= MAX_CLASS)) )
 	{
 		if(!cin)
 		{
@@ -180,7 +188,9 @@ void Sort(Schoolchild *& mas, int size)
 		for(int i = j; i < size; i++)
 		{
 			if(0 < (strcmp(mas[min].lName, mas[i].lName) ) )
+			{
 				min = i;
+			}
 		}
 		temp = mas[j];
 		mas[j] = mas[min];
@@ -198,7 +208,9 @@ void SortCity(Schoolchild *& mas, int size)
 		for(int i = j; i < size; i++)
 		{
 			if(0 < (strcmp(mas[min].city, mas[i].city) ) )
+			{
 				min = i;
+			}
 		}
 		temp = mas[j];
 		mas[j] = mas[min];
@@ -215,7 +227,9 @@ char * HMCity(Schoolchild *& mas, int size)
 	for(int i = 1; i < size; i++)
 	{
 		if(0 == (strcmp(tCity, mas[i].city) ) )
-			;
+		{
+			/*NULL*/
+		}
 		else
 		{
 			memcpy(tCity, mas[i].city, MAX_LEN_CITY);
