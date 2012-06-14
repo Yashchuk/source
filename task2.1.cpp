@@ -66,7 +66,7 @@ void Table(Book *& mas, int HB);
 int _tmain(int argc, _TCHAR* argv[])
 {
 	Book bk;
-	int HB = 0;				/*How much contest participants*/
+	int HB = 0;				/*How much students*/
 	cout << "How much book: ";
 	cin >> HB;
 	/*checking for Insert*/
