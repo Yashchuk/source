@@ -46,11 +46,13 @@ void Insert(Schoolchild & sc);
 void Show(const Schoolchild & sc);
 
 /*
-* @brief	This function displays top of table
+* @brief	This function displays table
+* @param	[in]		mas array of struct Schoolchild
+* @param	[in]		size
 * @return	void
 */
 
-void Table();
+void Table(Schoolchild *& mas, int HMC);
 
 /*
 * @brief	This function sorts an array of structures in alphabetical order by Last name
@@ -107,12 +109,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	}
 	/*sort and displays result*/
 	Sort(pS, HMC);
-	Table();
-	for(i = 0; i < HMC; ++i)
-	{
-		Show(pS[i]);
-	}
-	cout << " ============================================================================= " << endl;
+	Table(pS, HMC);
 	SortCity(pS, HMC);
 	cout << "The most active city: " << HMCity(pS, HMC) << endl;
 	system("@pause");
@@ -167,7 +164,7 @@ void Show(const Schoolchild & sc)
 	cout << "|" << endl;
 }
 
-void Table()
+void Table(Schoolchild *& mas, int HMC)
 {
 	cout << " ============================================================================= " << endl;
 	cout << "|" << setfill('.') << setw(17) << "Last Name" << setw(8) << setfill('.') 
@@ -176,6 +173,11 @@ void Table()
 		<< "|" << setfill('.') << setw(6) << "School";
 	cout << "|" << setfill('.') << setw(2) << "Class";
 	cout << "|" << endl;
+	for(int i = 0; i < HMC; ++i)
+	{
+		Show(mas[i]);
+	}
+	cout << " ============================================================================= " << endl;
 }
 
 void Sort(Schoolchild *& mas, int size)
@@ -247,19 +249,19 @@ char * HMCity(Schoolchild *& mas, int size)
 	{
 		if(0 == (strcmp(tCity, mas[i].city) ) )
 		{
-			++howMuch;
-			temp[count] = howMuch;
+			cout << "comp" << endl;
+			howMuch++;
+			cout << "howMuch: " << howMuch << endl;
 		}
 		else
 		{
 			temp[count] = howMuch;
-			++count;
 			howMuch = 1;
+			count++;
 			memcpy(tCity, mas[i].city, MAX_LEN_CITY);
 		}
 	}
 	temp[count] = howMuch;
-	/*determination of which city have entered the most*/
 	int max = 0;
 	for(int i = 1; i < cities; i++)
 	{
