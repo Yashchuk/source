@@ -55,11 +55,13 @@ void Sort(Book *& mas, int size);
 void Show(const Book & bk);
 
 /*
-* @brief	This function displays top of table
+* @brief	This function displays table
+* @param	[in]		mas array of struct book
+* @param	[in]		how much book
 * @return	void
 */
 
-void Table();
+void Table(Book *& mas, int HB);
 
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -89,16 +91,11 @@ int _tmain(int argc, _TCHAR* argv[])
 	}
 	/*sort and displays result*/
 	Sort(pB, HB);
-	Table();
-	for(i = 0; i < HB; ++i)
-	{
-		Show(pB[i]);
-	}
-	cout << " ============================================================================= " << endl;
+	Table(pB, HB);
 	cout << "Book publicated before 1970:\n";
 	for(i = 0; i < HB; ++i)
 	{
-		if(pB[i].year < MAX_YEAR)
+		if(pB[i].year < 1970)
 		{
 			Show(pB[i]);
 		}
@@ -121,7 +118,10 @@ void Insert(Book & bk)
 		if(!cin)
 		{
 			cin.clear();
-			cin.get();
+			while(cin.get() != '\n')
+			{
+				/*NULL*/
+			}
 		}
 		cout << "Enter publication year ( min - 1920, max - 2012): ";
 		cin >> iTmp;
@@ -165,7 +165,7 @@ void Show(const Book & bk)
 	cout << "|" << endl;
 }
 
-void Table()
+void Table(Book *& mas, int HB)
 {
 	cout << " ============================================================================= " << endl;
 	cout << "|" << setfill('.') << setw(13) << "Author" << setw(8) << setfill('.') 
@@ -173,4 +173,9 @@ void Table()
 		<< "|" << setfill('.') << setw(4) << "Year" << setw(0) << setfill('.')
 		<< "|" << setfill('.') << setw(10) << "Note" << setw(6) << setfill('.');
 	cout << "|" << endl;
+	for(int i = 0; i < HB; ++i)
+	{
+		Show(mas[i]);
+	}
+	cout << " ============================================================================= " << endl;
 }
