@@ -129,7 +129,7 @@ void Insert(Book & bk)
 	bk.year = iTmp;
 	while(cin.get() != '\n')
 	{
-		/*NULL*/
+		 /*NULL*/
 	}
 	cout << "Enter note: ";
 	cin.getline(bk.note, MAX_LEN_NOTE);
