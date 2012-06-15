@@ -65,7 +65,7 @@ void Table(Book *& mas, int HB);
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	int HB = 0;				/*How much contest participants*/
+	int HB = 0;				/*How much book*/
 	cout << "How much book: ";
 	cin >> HB;
 	/*checking for Insert*/
@@ -77,7 +77,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	}
 	while(cin.get() != '\n')
 	{
-			//NULL
+			/*NULL*/
 	}
 	Book * pB = new Book[HB];
 	int i;						/*counter for cycle "for"*/
