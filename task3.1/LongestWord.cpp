@@ -47,13 +47,13 @@ UI LongWord(std::string & instr)
 			}
 			while( isalpha(instr[i]) )
 			{
+				++i;
 				if( ! (i < instr.size() ) )
 				{
 					wordEnd = i - 1;
 					Length(&len, wordBegin, wordEnd, &longWordB, &longWordE);
 					break;
 				}
-				++i;
 			}
 			if( !isspace(instr[i]) && !ispunct(instr[i]) )
 			{
