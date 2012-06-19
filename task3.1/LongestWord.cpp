@@ -55,6 +55,10 @@ UI LongWord(std::string & instr)
 					break;
 				}
 			}
+			if( ! (i < instr.size() ) )
+			{
+				break;
+			}
 			if( !isspace(instr[i]) && !ispunct(instr[i]) )
 			{
 				wordBegin = wordEnd = i;
