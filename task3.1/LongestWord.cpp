@@ -14,6 +14,7 @@
 */
 
 #include "stdafx.h"
+
 #include "LongestWord.h"
 
 /**
