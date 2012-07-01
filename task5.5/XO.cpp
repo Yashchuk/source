@@ -1,8 +1,6 @@
 /**
 * @file		XO.cpp
-* @brief	This file contains source code of Task 5.5.
-*			It contains  realized of Show, PlMv, Win, CMv, CanWin, Move, 
-*			plus1plus2, plus1minus1, plus3plus6, plus3minus3 functions.
+* @brief	
 *
 * Copyright 2012 by Oleg Kiss,
 *
@@ -161,7 +159,6 @@ bool CanWin(char * f, char c)
 					m = true;
 					break;
 				}
-				break;
 			}
 			if(i == 1 || i == 7)
 			{
@@ -179,7 +176,6 @@ bool CanWin(char * f, char c)
 					m = true;
 					break;					
 				}
-				break;
 			}
 			if(i == 2 || i == 6)
 			{
@@ -206,7 +202,6 @@ bool CanWin(char * f, char c)
 					m = true;
 					break;
 				}
-				break;
 			}
 			if(i == 3 || i == 5)
 			{
@@ -224,7 +219,6 @@ bool CanWin(char * f, char c)
 					m = true;
 					break;
 				}
-				break;
 			}
 			if(i == 4)
 			{
