@@ -15,7 +15,6 @@
 #include "stdafx.h"
 #include "Coins.h"
 #include <stdlib.h>
-#include <iostream>
 
 const char BITS = 8;
 
@@ -33,6 +32,10 @@ Coins::Coins(UI t, UI e) : size(t + e)
 	{
 		c = (UC *) malloc(size / BITS);
 		tmp = size / BITS;
+	}
+	if(!c)
+	{
+		exit(EXIT_FAILURE);
 	}
 	for(UI i = 1; i < tmp; ++i)
 	{
