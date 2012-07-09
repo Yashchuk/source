@@ -88,8 +88,8 @@ void Show(const Coins * pC)
 
 UI DE(UI cmp)
 {
-	UI tmp = 0;
-	while( (!tmp) || (tmp > cmp) )
+	double tmp = 0;
+	while( (tmp < 1) || (tmp > cmp) )
 	{
 		if(!cin)
 		{
@@ -100,7 +100,7 @@ UI DE(UI cmp)
 			}
 		}
 		cin >> tmp;
-		if( (!tmp) || (tmp > cmp) )
+		if( (tmp < 1) || (tmp > cmp) )
 		{
 			cout << "Wong data. Re-enter: ";
 		}
