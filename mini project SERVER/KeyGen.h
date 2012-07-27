@@ -87,4 +87,4 @@ public:
 	~Keys();
 };
 
-#endif /*KEYGEN_H_*/
+#endif 
